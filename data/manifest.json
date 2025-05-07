@@ -1,0 +1,45 @@
+{
+  "short_name": "Generator",
+  "name": "12 volt generator",
+  "icons": [
+    {
+      "src": "/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "background_color": "#000000",
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#000000",
+  "shortcuts": [
+    {
+      "name": "Generator controls",
+      "short_name": "Generator",
+      "description": "Control panel for generator",
+      "url": "/",
+      "icons": [{ "src": "/icons-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Network settings",
+      "short_name": "Settings",
+      "description": "Set up network clien or accesspoint",
+      "url": "/net",
+      "icons": [{ "src": "/icons-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "Small 12 volt gasoline generator."
+}
