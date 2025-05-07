@@ -157,7 +157,7 @@ String assid     = "GENERATOR";
 String apassword = "generator";  //can be NULL for no password
 // Default WIFI CLIENT. Can be overwritten from prefs file.
 String cssid     = "localwifi";
-String cpassword = "localpassord";
+String cpassword = "localpassword";
 bool wifiConnect = false; // if connected as WiFi client
 // config-files to be stored in SPIFFS flash memory
 const char* config_file = "/config.txt";
@@ -1006,6 +1006,9 @@ void self_service () {
   //if buttons are still pressed
   if (digitalRead(BUTTON_01_IN) == LOW && digitalRead(BUTTON_02_IN) == LOW) {
     soft_reset();
+  } else {
+    lastButton01State = HIGH;
+    lastButton02State = HIGH;
   }
 }
 void emergency_stop (String str) {
