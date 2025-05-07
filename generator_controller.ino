@@ -156,8 +156,8 @@ const unsigned char logo_bitmap [350] PROGMEM = {
 String assid     = "GENERATOR";
 String apassword = "generator";  //can be NULL for no password
 // Default WIFI CLIENT. Can be overwritten from prefs file.
-String cssid     = "uthne";
-String cpassword = "Aass1111";
+String cssid     = "localwifi";
+String cpassword = "localpassord";
 bool wifiConnect = false; // if connected as WiFi client
 // config-files to be stored in SPIFFS flash memory
 const char* config_file = "/config.txt";
