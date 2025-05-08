@@ -36,7 +36,7 @@
     {
       "name": "Network settings",
       "short_name": "Settings",
-      "description": "Set up network clien or accesspoint",
+      "description": "Set up network client or accesspoint",
       "url": "/net",
       "icons": [{ "src": "/icons-192.png", "sizes": "192x192" }]
     }
