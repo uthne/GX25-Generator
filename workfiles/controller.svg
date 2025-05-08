@@ -1083,12 +1083,12 @@
         <path class="l" d="M455.45,261.85v-.63h-1.07V261l1-1.48h.33V261h.33v.24h-.33v.63Zm0-.87v-.78c0-.12,0-.24,0-.36h0c-.07.14-.13.24-.19.34l-.57.79h.76Z"/>
       </g>
       <g>
-        <rect class="b" x="447.87" y="473.39" width="73.7" height="56.69"/>
+        <rect class="x" x="447.87" y="473.39" width="73.7" height="56.69"/>
         <rect class="j" x="445.04" y="473.39" width="2.83" height="56.69"/>
         <rect class="j" x="521.57" y="473.39" width="2.83" height="56.69"/>
       </g>
       <g>
-        <rect class="b" x="340.16" y="473.39" width="73.7" height="56.69"/>
+        <rect class="x" x="340.16" y="473.39" width="73.7" height="56.69"/>
         <rect class="j" x="337.32" y="473.39" width="2.83" height="56.69"/>
         <rect class="j" x="413.86" y="473.39" width="2.83" height="56.69"/>
       </g>
