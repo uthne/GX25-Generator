@@ -7,465 +7,464 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="/manifest.json">
 <title>Network setting</title>
-	
-	<style>
-		/* Define colors for use in css and javascript */
-		@property --black {
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #000;
-        }
-		@property --white {
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #fff;
-        }
-		@property --red {
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #f00
-        }
-		@property --lime {
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #0f0
-        }
-		@property --yellowred {
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #fd0
-        } 
-		@property --bluegray{
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #008CBA
-		}
-		@property --graylight{
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #CCC
-		}
-		@property --graydark{
-            syntax: "<color>";
-            inherits: true;
-            initial-value: #262626
-		}
-		.svg_white    {fill:#fff;}
-		.svg_yellow   {fill:var(--yellowred)}
-		.svg_green    {fill:var(--lime)}
-		.svg_red      {fill:var(--red)}
-		.svg_graydark {fill:var(--graydark)}
-		.svg_graylight {fill:var(--graylight)}
-		
-		body {
-			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-			font-size: 16px;
-			background-color: var(--black);
-			margin: 0px;
-			padding: 0px;
-		}
-		.nav_button {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			width: 40px;
-			height: 40px;
-			overflow: hidden;
-		}
-		.nav_button svg {
-			width: 40px;
-			height: 40px;
-			opacity: .6;
-		}
-		.nav_button svg:hover {
-			opacity: 1
-		}
-		.heading {
-			position: relative;
-			box-sizing: border-box;
-			padding: 10px;
-			text-align: center;
-			color: var(--lime);
-			font-size: 3em;
-		}
-		.form_display, .subheading, .list_display {
-			box-sizing: border-box;
-			position: relative;
-			width: 100%;
-			max-width: 500px;
-			margin: 0 auto;
-		}
-		.form_display {
-			text-align: center;
-		}
-		.subheading, .form_display, .list_display {
-			box-sizing: border-box;
-			padding: 10px;
-			font-size: 1em;
-			text-align: center;
-			color: var(--graylight);
-			position: relative;
-		}
-		.status_display { 
-			box-sizing: border-box;
-			padding: 10px;
-			font-size: 1em;
-			text-align: center;
-			color: var(--red);
-			position: relative;
-		}
-		
-		.list_display {
-			box-sizing: border-box;
-			padding: 20px 10px;
-			
-		}
-		.select_net {
-			color: var(--bluegray)
-		}
-		.button {
-            background-color: var(--bluegray);
-            border: none;
-            color: white;
-            padding: 15px 16px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-			min-width: 120px;
-		}
-		.button:active {
-			background-color: var(--graylight);
-            color: var(--black);
-		}
-		.button:disabled {
-			opacity: 30%;
-		}
-		.button_red, #stop {
-			background-color: var(--red);
-		}
-		.button_yellow {
-			background-color: var(--yellowred) !important;
-		}
-		.button_green {
-			background-color: var(--lime) !important;
-			color: black !important;
-		} 
-		.button_blue {
-			background-color: var(--bluegray) !important;
-		} 
-		.blink {
-  			animation: blinker 1s linear infinite;
-		}
-		#restart, #delete {
-			margin-top: 4px;
-		}
-		@keyframes blinker {
-  			50% {
-    			background-color: var(--yellowred);
-				fill:  var(--yellowred);
-				color: var(--yellowred);
-				box-shadow: 0 0 10px var(--yellowred);
-  			}
-		} 
-		
-		input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-			background-color: var(--graydark);
-			color: var(--graylight);
-		}
-		.hide_display {
-			display:none;
-		}
-		
-		/* Un-comment and adjust the padding of stop and choke button
-		   to suit the length of the text in your language.
-		   */
-		/*#stop {
-			padding: 15px 32px !important;
-		}
-		#choke {
-			padding: 15px 32px !important;
-		}*/
-
-	</style>
-	
+<style>
+/* Define colors for use in css and javascript */
+@property --black {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #000;
+}
+@property --white {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #fff;
+}
+@property --red {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #f00
+}
+@property --lime {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #0f0
+}
+@property --yellowred {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #fd0
+}
+@property --bluegray {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #008CBA
+}
+@property --graylight {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #CCC
+}
+@property --graydark {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #262626
+}
+.svg_white {
+	fill: #fff;
+}
+.svg_yellow {
+	fill: var(--yellowred)
+}
+.svg_green {
+	fill: var(--lime)
+}
+.svg_red {
+	fill: var(--red)
+}
+.svg_graydark {
+	fill: var(--graydark)
+}
+.svg_graylight {
+	fill: var(--graylight)
+}
+body {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 16px;
+	background-color: var(--black);
+	margin: 0px;
+	padding: 0px;
+}
+.nav_button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+}
+.nav_button svg {
+	width: 40px;
+	height: 40px;
+	opacity: .6;
+}
+.nav_button svg:hover {
+	opacity: 1
+}
+.heading {
+	position: relative;
+	box-sizing: border-box;
+	padding: 10px;
+	text-align: center;
+	color: var(--lime);
+	font-size: 3em;
+}
+.form_display, .subheading, .list_display {
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.form_display {
+	text-align: center;
+}
+.subheading, .form_display, .list_display {
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 1em;
+	text-align: center;
+	color: var(--graylight);
+	position: relative;
+}
+.status_display {
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 1em;
+	text-align: center;
+	color: var(--red);
+	position: relative;
+}
+.list_display {
+	box-sizing: border-box;
+	padding: 20px 10px;
+}
+.select_net {
+	color: var(--bluegray)
+}
+.button {
+	background-color: var(--bluegray);
+	border: none;
+	color: white;
+	padding: 15px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	min-width: 120px;
+}
+.button:active {
+	background-color: var(--graylight);
+	color: var(--black);
+}
+.button:disabled {
+	opacity: 30%;
+}
+.button_red, #stop {
+	background-color: var(--red);
+}
+.button_yellow {
+	background-color: var(--yellowred) !important;
+}
+.button_green {
+	background-color: var(--lime) !important;
+	color: black !important;
+}
+.button_blue {
+	background-color: var(--bluegray) !important;
+}
+.blink {
+	animation: blinker 1s linear infinite;
+}
+#restart, #delete {
+	margin-top: 4px;
+}
+@keyframes blinker {
+	50% {
+		background-color: var(--yellowred);
+		fill:  var(--yellowred);
+		color: var(--yellowred);
+		box-shadow: 0 0 10px var(--yellowred);
+	}
+}
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: var(--graydark);
+	color: var(--graylight);
+}
+.hide_display {
+	display: none;
+}
+/* Un-comment and adjust the padding of stop and choke button to suit the length of the text in your language. */
+/*
+#stop {
+	padding: 15px 32px !important;
+}
+#choke {
+	padding: 15px 32px !important;
+}
+*/
+</style>
 </head>
 
 <body>
 <div class="main">
-	<div class="heading" id="heading">
-		<span id="head">--</span>
-	</div>
-	<div class="subheading" id="subheading">
-		<span id="sub">--</span>
-	</div>
-	<div class="status_display" id="status_display">
-		<span id="current_net">--</span><br>
+	<div class="heading" id="heading"> <span id="head">--</span> </div>
+	<div class="subheading" id="subheading"> <span id="sub">--</span> </div>
+	<div class="status_display" id="status_display"> <span id="current_net">--</span><br>
 		<span id="current_ip">--</span>
 	</div>
-	<div class="form_display">
-		Wifi client setup:
+	<div class="form_display"> Wifi client setup:
 		<input class="" type="text" maxlength="32" id="ssid" name="ssid" width="100%" placeholder="--"><br>
-		<input class="" type="text" maxlength="64" id="pswd" name="pswd" width="100%"  placeholder="--"><br>&nbsp;<br>
-		<button id="scan" class="button">SCAN</button>&nbsp;<button id="send" class="button button_green">SEND</button><br>
-		<button id="delete" class="button button_red stop">DELETE</button>&nbsp;<button id="restart" class="button button_red stop">RESTART</button>
+		<input class="" type="text" maxlength="64" id="pswd" name="pswd" width="100%"  placeholder="--"><br>
+		&nbsp;<br>
+		<button id="scan" class="button">SCAN</button>&nbsp;
+		<button id="send" class="button button_green">SEND</button><br>
+		<button id="delete" class="button button_red stop">DELETE</button>&nbsp;
+		<button id="restart" class="button button_red stop">RESTART</button>
 	</div>
-	
-	
-	<div class="list_display">
-		<span id="list_content"></span><br>
-	</div>
+	<div class="list_display"> <span id="list_content"></span><br></div>
 	<div class="nav_button">
-		<a href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><g id="Layer_1" data-name="Layer 1"><circle class="svg_graydark" cx="25" cy="25" r="24"/></g><g id="Layer_3" data-name="Layer 3"><polygon class="svg_graylight" points="22.47 10.56 33.81 10.56 26.18 20.95 33.41 20.95 16.91 40.07 22.42 27.01 16.19 27.01 22.47 10.56"/></g></svg></a>
-	</div>	
-	
+		<a href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+			<g id="Layer_1" data-name="Layer 1">
+				<circle class="svg_graydark" cx="25" cy="25" r="24"/>
+			</g>
+			<g id="Layer_3" data-name="Layer 3">
+				<polygon class="svg_graylight" points="22.47 10.56 33.81 10.56 26.18 20.95 33.41 20.95 16.91 40.07 22.42 27.01 16.19 27.01 22.47 10.56"/>
+			</g>
+		</svg>
+		</a>
+	</div>
 </div>
+<script>
+/* Check browser language, 
+	Will be returned as 'en-US' or 'fr-FR',
+	Language file should be named: language-en-US.json
+	*/
+const lang = navigator.language;
+		
+/* fallback text strings when languagefile is missing */
+var dspStr = {
+	heading:  "Network settings",
+	subhead:  "Enter network and credentials and hit send.<br>&nbsp;<br>Restart the generator for changes to take effect.<br>(Press CHOKE button on restart start Access Point.)",
+	currNet:  "Current network: ",
+	currIP:   "Current address: ",
+	netPlacehold: "Network",
+	pwdPlacehold: "Password",
+	btnScanName: "SCAN",
+	btnSendName: "SEND",
+	btDelName:   "DELETE",
+	btRstName:   "RESTART",
+	netScanList: "Found network (click to select):",
+	netScanMsg:  "Scanning networks ...",
+	ssidTooShort: "To short network name.",
+	pswdTooShort: "To short password.",
+	msgDelete:    "Delete saved credentials?",
+	msgRestart:   "Restart controller?",
+	file_0:		 "Failed to save preferences!",
+	file_1:		 "Failed to write to preference file!",
+	file_2:      "Preferences saved.",
+	file_3:		 "Could not delete preference file!",
+	file_4:		 "Preferences deleted."
+}
+		
+/* variables */
+var netList = "";
+		
+		
+/* init function to populate text and numbers at startup with
+	text and numbers from language file.
+	This will only work whan files are served from a webserver.
+	Errors wil be shown in Javascript console and texts will default.
 	
-	<script>
-		/* Check browser language, 
-		   Will be returned as 'en-US' or 'fr-FR',
-		   Language file should be named: language-en-US.json
-		   */
-		const lang = navigator.language;
-		
-		/* fallback text strings when languagefile is missing */
-		var dspStr = {
-			heading:  "Network settings",
-			subhead:  "Enter network and credentials and hit send.<br>&nbsp;<br>Restart the generator for changes to take effect.<br>(Press CHOKE button on restart start Access Point.)",
-			currNet:  "Current network: ",
-			currIP:   "Current address: ",
-			netPlacehold: "Network",
-			pwdPlacehold: "Password",
-			btnScanName: "SCAN",
-			btnSendName: "SEND",
-			btDelName:   "DELETE",
-			btRstName:   "RESTART",
-			netScanList: "Found network (click to select):",
-			netScanMsg:  "Scanning networks ...",
-			ssidTooShort: "To short network name.",
-			pswdTooShort: "To short password.",
-			msgDelete:    "Delete saved credentials?",
-			msgRestart:   "Restart controller?",
-			file_0:		 "Failed to save preferences!",
-			file_1:		 "Failed to write to preference file!",
-			file_2:      "Preferences saved.",
-			file_3:		 "Could not delete preference file!",
-			file_4:		 "Preferences deleted."
+	The init also opens up a WebSocket to port 81 on the server if it is avaliable.
+	*/
+var Socket;
+async function init() {
+	const url = "language-" + lang + ".json";
+	try {
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error(`Response status: ${response.status}`);
 		}
+		dspStr = await response.json();
+		populate();
+	} catch (error) {
+		console.error(error.message);
+		populate();
+	}
+	Socket = new WebSocket('ws://' + window.location.hostname + ':81/');
+	Socket.onmessage = function (event) {
+		processCommand(event);
+	}
+} 
 		
 		
-		/* variables */
-		var netList = "";
 		
+heading = document.getElementById("head");
+subheading = document.getElementById("sub");
+currNet = document.getElementById("current_net");
+currIP = document.getElementById("current_ip");
+ssid_field = document.getElementById("ssid");
+pswd_field = document.getElementById("pswd");
+list_content = document.getElementById("list_content");
+networks_display = document.getElementById("networks_display");
+btn_scan = document.getElementById("scan");
+btn_send = document.getElementById("send");
+btn_delete = document.getElementById("delete");
+btn_restart = document.getElementById("restart");
 		
-		/* init function to populate text and numbers at startup with
-		   text and numbers from language file.
-		   This will only work whan files are served from a webserver.
-		   Errors wil be shown in Javascript console and texts will default.
-		   
-		   The init also opens up a WebSocket to port 81 on the server if it is avaliable.
-		   */
-		var Socket;
-		async function init() {
-  			const url = "language-" + lang + ".json";
-  			try {
-				const response = await fetch(url);
-    			if (!response.ok) {
-      			throw new Error(`Response status: ${response.status}`);
-    		}
+function populate() {
+	heading.innerHTML = dspStr.heading;
+	subheading.innerHTML = dspStr.subhead;
+	currNet.innerHTML = dspStr.currNet + " ...";
+	currIP.innerHTML = dspStr.currIP + " ...";
+	ssid_field.setAttribute("placeholder", dspStr.netPlacehold);
+	pswd_field.setAttribute("placeholder", dspStr.pwdPlacehold);
+	btn_scan.innerHTML = dspStr.btnScanName;
+	btn_send.innerHTML = dspStr.btnSendName;
+	btn_delete.innerHTML = dspStr.btDelName;
+	btn_restart.innerHTML = dspStr.btRstName;
+}
 
-    		dspStr = await response.json();
-    		populate();
-  			} catch (error) {
-    			console.error(error.message);
-				populate();
-			}
-            
-            Socket = new WebSocket('ws://' + window.location.hostname + ':81/');
-            Socket.onmessage = function (event) {
-            	processCommand(event);
-            }
-		} 
-		
-		
-		
-		heading = document.getElementById("head");
-		subheading = document.getElementById("sub");
-		currNet = document.getElementById("current_net");
-		currIP = document.getElementById("current_ip");
-		ssid_field = document.getElementById("ssid");
-		pswd_field = document.getElementById("pswd");
-		list_content = document.getElementById("list_content");
-		networks_display = document.getElementById("networks_display");
-		btn_scan = document.getElementById("scan");
-		btn_send = document.getElementById("send");
-		btn_delete = document.getElementById("delete");
-		btn_restart = document.getElementById("restart");
-		
-		function populate() {
-			heading.innerHTML = dspStr.heading;
-			subheading.innerHTML = dspStr.subhead;
-			currNet.innerHTML = dspStr.currNet + " ...";
-			currIP.innerHTML = dspStr.currIP + " ...";
-			ssid_field.setAttribute("placeholder", dspStr.netPlacehold);
-			pswd_field.setAttribute("placeholder", dspStr.pwdPlacehold);
-			btn_scan.innerHTML = dspStr.btnScanName;
-			btn_send.innerHTML = dspStr.btnSendName;
-			btn_delete.innerHTML = dspStr.btDelName;
-			btn_restart.innerHTML = dspStr.btRstName;
+function sn(l_net) {
+	ssid_field.value = l_net;
+}		
+
+function SCAN_send() {
+	// only sending '1' to leave handeling to controller
+	var msg = {
+		type: 'SCAN',
+		value: 1
+	};
+	console.log("<-SCAN");
+	Socket.send(JSON.stringify(msg));
+	list_content.innerHTML = dspStr.netScanMsg;
+}
+function DELETE_send() {
+	// only sending '1' to leave handeling to controller
+	var msg = {
+		type: 'DELETE',
+		value: 1
+	};
+	console.log("<-DELETE");
+	Socket.send(JSON.stringify(msg));
+}
+function SAVE_send() {
+	var l_ssid = ssid_field.value;
+	var l_pswd = pswd_field.value;
+	if (l_ssid.length < 1 || (l_pswd.length < 8 && l_pswd.length > 0)) {
+		if (l_ssid.length < 4) {
+			alert(dspStr.ssidTooShort);
+		} else {
+			alert(dspStr.pswdTooShort);
 		}
-		
-		function sn(l_net) {
-			ssid_field.value = l_net;
-		}		
-		
-		
-        function SCAN_send() {
- 			// only sending '1' to leave handeling to controller
-       		var msg = {
-        		type: 'SCAN',
-        		value: 1
-        	};
-			console.log("<-SCAN");
-        	Socket.send(JSON.stringify(msg));
-			list_content.innerHTML = dspStr.netScanMsg;
-        }
-        function DELETE_send() {
- 			// only sending '1' to leave handeling to controller
-       		var msg = {
-        		type: 'DELETE',
-        		value: 1
-        	};
-			console.log("<-DELETE");
-        	Socket.send(JSON.stringify(msg));
-        }
-        function SAVE_send() {
- 			var l_ssid = ssid_field.value;
-			var l_pswd = pswd_field.value;
-			if (l_ssid.length < 1 || (l_pswd.length < 8 && l_pswd.length > 0)) {
-				if (l_ssid.length < 4) {
-					alert(dspStr.ssidTooShort);
-				} else {
-					alert(dspStr.pswdTooShort);
-				}
-			} else {
-                var msg = {
-                    type: 'SAVE',
-                    ssid: l_ssid,
-                    pswd: l_pswd
-                };
-                console.log("<-SAVE: " + l_pswd +"@" + l_ssid);
-                Socket.send(JSON.stringify(msg));
-			}
-        }
-        function RESTART_send() {
- 			// only sending '1' to leave handeling to controller
-       		var msg = {
-        		type: 'RESTART',
-        		value: 1
-        	};
-			console.log("<-RESTART");
-        	Socket.send(JSON.stringify(msg));
-        }
-		function CURRENT_send() {
- 			// only sending '1' to leave handeling to controller
-       		var msg = {
-        		type: 'CURRENT',
-        		value: 1
-        	};
-			console.log("<-CURRENT");
-        	Socket.send(JSON.stringify(msg));
-        }
+	} else {
+		var msg = {
+			type: 'SAVE',
+			ssid: l_ssid,
+			pswd: l_pswd
+		};
+		console.log("<-SAVE: " + l_pswd +"@" + l_ssid);
+		Socket.send(JSON.stringify(msg));
+	}
+}
+function RESTART_send() {
+	// only sending '1' to leave handeling to controller
+	var msg = {
+		type: 'RESTART',
+		value: 1
+	};
+	console.log("<-RESTART");
+	Socket.send(JSON.stringify(msg));
+}
+function CURRENT_send() {
+	// only sending '1' to leave handeling to controller
+	var msg = {
+		type: 'CURRENT',
+		value: 1
+	};
+	console.log("<-CURRENT");
+	Socket.send(JSON.stringify(msg));
+}
 
-        function processCommand(event) {
-            var obj = JSON.parse(event.data);
-            var type = obj.type;
-            if (type.localeCompare("CURRENT") == 0) {
-                var l_current = new Array(10);
-				console.log("->CURRENT:");
-             	l_current = obj.value;
-					currNet.innerHTML = dspStr.currNet + l_current[0];
-					console.log("ssid: " + l_current[0]);
-					currIP.innerHTML = dspStr.currIP + l_current[1];
-					console.log("ip: " + l_current[1]);
-					if (l_current[2] != 0) {
-						ssid_field.value = l_current[2];
-						console.log("--ssid: " + l_current[2]);
-					}
-					if (l_current[3] != 0) {
-						pswd_field.value = l_current[3];
-						console.log("--pswd: " + l_current[3]);
-
-					}
-             } else if (type.localeCompare("SCAN") == 0) {
-				 var l_networks = new Array(10);
-				 console.log("->SCAN:");
-             	 l_networks = obj.value;
-				 netList = dspStr.netScanList + "<br>";
-				 l_networks.forEach(e => {
-					 console.log(e);
-					 netList += "<br>" 
-							 + "<span class=\"select_net\" onClick=\"sn('" 
-							 + e + "')\">" + e + "</span>";
-					 list_content.innerHTML = netList;
-				 });
-			 } else if (type.localeCompare("FILE") == 0) {
-             	 l_part = obj.value;
-				 l_message = dspStr[l_part];
-				 list_content.innerHTML = l_message;
-				 console.log("->FILE: " + l_message);
-			 } else if (type.localeCompare("RELOAD") == 0) {
-				var l_time = parseInt(obj.value);
-				const loadTime = setTimeout(reloader, l_time);
-			 } else if (type.localeCompare("message") == 0) {
-             	 l_part = obj.value;
-				 list_content.innerHTML = l_part;
-				 console.log("->message: " + l_part);
-			 } else if (type.localeCompare("welcome") == 0) {
-				 CURRENT_send();
-			 }
+function processCommand(event) {
+	var obj = JSON.parse(event.data);
+	var type = obj.type;
+	if (type.localeCompare("CURRENT") == 0) {
+		var l_current = new Array(10);
+		console.log("->CURRENT:");
+		l_current = obj.value;
+		currNet.innerHTML = dspStr.currNet + l_current[0];
+		console.log("ssid: " + l_current[0]);
+		currIP.innerHTML = dspStr.currIP + l_current[1];
+		console.log("ip: " + l_current[1]);
+		if (l_current[2] != 0) {
+			ssid_field.value = l_current[2];
+			console.log("--ssid: " + l_current[2]);
 		}
-		
-		
-		btn_scan.addEventListener('click', function(){
-            SCAN_send();
-        });
-		btn_send.addEventListener('click', function(){
-            SAVE_send();
-        });
-		btn_delete.addEventListener('click', function(){
-			console.log("Delete?");
-			if (confirm(dspStr.msgDelete) == true) {
-				console.log("-- User said yes.");
-  				DELETE_send();
-			} else {
-				console.log("-- User said no.");
-			}
-        });
-		btn_restart.addEventListener('click', function(){
- 			console.log("Restart?");
-			if (confirm(dspStr.msgRestart) == true) {
-				console.log("-- User said yes.");
-  				RESTART_send();
-			} else {
-				console.log("-- User said no.");
-			}
-        });
-		
-		function reloader () {
-			window.location.reload()
+		if (l_current[3] != 0) {
+			pswd_field.value = l_current[3];
+			console.log("--pswd: " + l_current[3]);
 		}
-        window.onload = function (event) {
-          init();
-        }		
+	} else if (type.localeCompare("SCAN") == 0) {
+		var l_networks = new Array(10);
+		console.log("->SCAN:");
+		l_networks = obj.value;
+		netList = dspStr.netScanList + "<br>";
+		l_networks.forEach(e => {
+			console.log(e);
+			netList += "<br>" 
+				+ "<span class=\"select_net\" onClick=\"sn('" 
+				+ e + "')\">" + e + "</span>";
+			list_content.innerHTML = netList;
+		});
+	} else if (type.localeCompare("FILE") == 0) {
+		l_part = obj.value;
+		l_message = dspStr[l_part];
+		list_content.innerHTML = l_message;
+		console.log("->FILE: " + l_message);
+	} else if (type.localeCompare("RELOAD") == 0) {
+		var l_time = parseInt(obj.value);
+		const loadTime = setTimeout(reloader, l_time);
+	} else if (type.localeCompare("message") == 0) {
+		l_part = obj.value;
+		list_content.innerHTML = l_part;
+		console.log("->message: " + l_part);
+	} else if (type.localeCompare("welcome") == 0) {
+		CURRENT_send();
+	}
+}
+		
+		
+btn_scan.addEventListener('click', function(){
+	SCAN_send();
+});
+btn_send.addEventListener('click', function(){
+	SAVE_send();
+});
+btn_delete.addEventListener('click', function(){
+	console.log("Delete?");
+	if (confirm(dspStr.msgDelete) == true) {
+		console.log("-- User said yes.");
+		DELETE_send();
+	} else {
+		console.log("-- User said no.");
+	}
+});
+btn_restart.addEventListener('click', function(){
+	console.log("Restart?");
+	if (confirm(dspStr.msgRestart) == true) {
+		console.log("-- User said yes.");
+		RESTART_send();
+	} else {
+		console.log("-- User said no.");
+	}
+});
+		
+function reloader () {
+	window.location.reload()
+}
+window.onload = function (event) {
+	init();
+}		
 
-	</script>	
+</script>
 </body>
 </html>
